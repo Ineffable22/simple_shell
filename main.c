@@ -61,11 +61,11 @@ int main(int argc, char **argv, char **env)
 int exit_time(char *buffer)
 {
 	int count = 0, flag = 0;
-	char *exit = "exit";
+	char *exit1 = "exit";
 
 	while (buffer[count])
 	{
-		if (buffer[count] != exit[count])
+		if (buffer[count] != exit1[count])
 		{
 			flag = 1;
 			if (buffer[count] == 32)
@@ -79,7 +79,7 @@ int exit_time(char *buffer)
 					}
 				}
 			}
-			break;
+			exit(98);
 		}
 		count++;
 	}
