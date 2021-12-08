@@ -42,7 +42,7 @@ int main(int argc, char **argv, char **env)
 			if (cmd.band == 1)
 				_free(cmd.env);
 			free(buffer);
-			exit(98);
+			exit(0);
 		}
 		bypass(buffer, argv, &cmd);
 		if (a == 0)
