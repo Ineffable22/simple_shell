@@ -37,13 +37,6 @@ int main(int argc, char **argv, char **env)
 			}
 			break;
 		}
-		if (exit_time(buffer) == 0)
-		{
-			if (cmd.band == 1)
-				_free(cmd.env);
-			free(buffer);
-			break;
-		}
 		bypass(buffer, argv, &cmd);
 		if (a == 0)
 			free(buffer);
@@ -53,44 +46,32 @@ int main(int argc, char **argv, char **env)
 
 /**
  * exit_time - compares buffer with "exit" ignoring spaces
- * @buffer: saves a single line of the input
+ * @cmd: pointer to structure
  *
  * Return: 0 on succeed and 1 on failure
  */
 
-int exit_time(char *buffer)
+int exit_time(s_global *cmd)
 {
-	int count = 0, flag = 0;
-	char *exit = "exit";
+	int number = 0;
 
-	while (buffer[count])
+	if (cmd->band == 1)
+		_free(cmd->env);
+
+	if (cmd->token[1] == NULL)
 	{
-		if (buffer[count] != exit[count])
-		{
-			flag = 1;
-			if (buffer[count] == 32)
-			{
-				while (buffer[count] == 32)
-				{
-					count++;
-					if (buffer[count] == '\n' || buffer[count] == '\0')
-					{
-						return (0);
-					}
-				}
-			}
-			break;
-		}
-		count++;
+		_free(cmd->token);
+		exit(0);
 	}
-	if (flag == 0)
+	if (cmd->token[2] != NULL)
 	{
+		printf("exit: too many arguments\n");
 		return (0);
 	}
-	else
-	{
-		return (1);
-	}
+	number = atoi(cmd->token[1]);
+	free(cmd->token[0]);
+	free(cmd->token);
+	exit(number);
 }
 
 /**
