@@ -6,7 +6,6 @@
  *
  * Return: the result of the functions called or -1 on failure
  */
-
 int match(s_global *cmd)
 {
 	int (*fu)(s_global *);
