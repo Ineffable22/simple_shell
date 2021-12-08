@@ -47,7 +47,7 @@ typedef struct Tags
 
 /*---------------------main.c---------------------*/
 int bypass(char *buff, char **argv, s_global *cmd);
-int exit_time(char *buffer);
+int exit_time(s_global *cmd);
 void signal_betty(int x);
 /*-------------------built_in.c-------------------*/
 void built_in(char **argv, s_global *cmd);

@@ -19,6 +19,7 @@ int match(s_global *cmd)
 		{"unsetenv", shell_unsetenv},
 		{"printenv", shell_printenv},
 		{"clear", shell_clear},
+		{"exit", exit_time},
 		{NULL, NULL}
 	};
 
