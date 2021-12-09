@@ -71,7 +71,7 @@ int my_getline(char **buff, int *len)
 			return (var_flag_0);
 		}
 		count = var_flag_0;
-		*buff = malloc(sizeof(char) * (*len));
+		*buff = malloc(sizeof(char) * ((*len) + 1));
 		if (*buff == NULL)
 		{
 			free(save);
