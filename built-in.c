@@ -9,10 +9,8 @@
 void built_in(char **argv, s_global *cmd)
 {
 	char buff[1024] = "/bin/";
-	int i = 0, j = 0;
-	int var_env = 0;
-	pid_t child = 0;
-	int status = 0;
+	int i = 0, j = 0, flag = 0;
+	int var_acc = 0;
 
 	while (*(cmd->token[0] + i))
 	{
@@ -22,30 +20,26 @@ void built_in(char **argv, s_global *cmd)
 			break;
 		i++;
 	}
-	child = fork();
-	if (child == 0)
+	var_acc = access(cmd->token[0], X_OK);
+	if (var_acc == -1)
 	{
-		if (j != 5)
+		strcat(buff, cmd->token[0]);
+		var_acc = access(buff, X_OK);
+		if (var_acc != -1)
 		{
-			strcat(buff, cmd->token[0]);
-			var_env = execve(buff, cmd->token, cmd->env);
+			j = 5;
+			flag = 1;
 		}
-		else
-		{
-			var_env = execve(cmd->token[0], cmd->token, cmd->env);
-		}
-		if (var_env == -1)
-		{
-			printf("%s: No such file or directory\n", argv[0]);
-		}
-		free(cmd->token);
-		kill(getpid(), SIGKILL);
 	}
-	else if (child > 0)
+	else
 	{
-		free(cmd->token);
-		wait(&status);
+		flag = 1;
+		j = 0;
 	}
+	if (flag == 1)
+		function_fork(cmd, buff, j);
+	else
+		printf("%s: No such file or directory\n", argv[0]);
 }
 
 /**
