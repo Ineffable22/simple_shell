@@ -31,20 +31,26 @@ that executes commands read from standard input.
 ## Compilation
 
 Usage: **Shell**
-Simple shell is started with the standard input connected to the terminal. To start, compile all .c located in this repository by using this command:
+*Simple shell is started with the standard input connected to the terminal. To start, compile all .c located in this repository by using this command:
 ```
 gcc -Wall -Werror -Wextra -pedantic *.c -o Shell
 ```
 ## Example
 
-Usage: **hsh**
-```c
+Usage: **Shell**
+```
 jairocast2@ubuntu:~/shell$ ./Shell
 #Cisfun$
 #Cisfun$ ls
 AUTHORS      function_match_1.c   functions_help_1.c   header.h   match.c        README.md
  built-in.c   function_match_2.c   functions_help_2.c   main.c
 #Cisfun$ exit
+jairocast2@ubuntu:~/shell$
+```
+```
+jairocast2@ubuntu:~/shell$ echo "/bin/ls" | ./Shell
+AUTHORS      function_match_1.c   functions_help_1.c   header.h   match.c        README.md
+ built-in.c   function_match_2.c   functions_help_2.c   main.c
 jairocast2@ubuntu:~/shell$
 ```
 
