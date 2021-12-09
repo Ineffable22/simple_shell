@@ -1,0 +1,42 @@
+.TH MAN_1_SIMPLE_SHELL 1 08/12/2021 "Holberton(Jairo, Miguel G.)" "MANUAL DE Simple Shell"
+
+.SH NAME
+Simple_shell - Our own Version of the command line interpreter Shell (Bash).
+
+.SH SYNOPSIS
+bash [options] [command_string | file]
+
+.SH DESCRIPTION
+Simple Shell is a program that emulates a shell (bash) in an interactive mode. This is a command language interpreter that executes commands read from standard input.
+
+.SH ARGUMENTS
+The first argument is assumed to be the name of the Simple Shell commands. If Simple Shell is invoked this way, argv[0] is set to the name of the file, and the next positional parameters are set to the remaining arguments. Simple Shell reads and executes commands from this file, then exits. Simple Shell's exit is 0 if there are no error on the excecutes of the commands. An attempt is first made to open the file in the current directory, and, if no file is found, then the shell searches the directories in PATH for the script.
+
+.SH INVOCATION
+Simple shell is started with the standard input connected to the terminal. To start, compile all .c located in this repository by using this command:
+.nf
+gcc -Wall -Werror -Wextra -pedantic *.c -o Shell
+.ni
+You can start this program using the command line './Shell' with no other arguments and it will start the 'Interactive mode' where the Simple Shell will wait until the user types a command line.
+
+You can run Simple Shell in a 'non-interactive', to run a shell script in this mode you can write for example: 'echo "/bin/ls" | ./Shell'.
+.P
+.TP
+.B %
+.SH RETURN VALUE
+Upon successful return 0.
+.P
+If an output error is encountered, a negative value is returned.
+
+.SH EXAMPLES
+.nf
+
+jairocast2@ubuntu:~/shell$ ./Shell
+#Cisfun$
+#Cisfun$ ls
+AUTHORS      function_match_1.c   functions_help_1.c   header.h   match.c        README.md
+ built-in.c   function_match_2.c   functions_help_2.c   main.c
+#Cisfun$ exit
+jairocast2@ubuntu:~/shell$
+
+.fi
