@@ -58,6 +58,7 @@ int flag_1(char *tmp_buff, char *save, int count, int *len);
 char *_strtok(char *buff);
 /*--------------------match.c--------------------*/
 int match(s_global *);
+void function_fork(s_global *cmd, char *buff, int j);
 /*--------------------function_match_1.c----------*/
 int print_env(s_global *cmd);
 int shell_printenv(s_global *cmd);
