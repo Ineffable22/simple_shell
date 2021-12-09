@@ -19,14 +19,14 @@ that executes commands read from standard input.
 |--|--|
 | **AUTHORS** | Contains the authors of the Simple Shell program. |
 | **README.md** | Contains an overview of Simple Shell. Important things that you should know before executes our Simple Shell program. |
-| **built-in.c** |  |
-| **function_match_1.c** | |
-| **function_match_2.c** | |
-| **functions_help_1** | |
-| **functions_help_2** | |
-| **header.h** | |
-| **main.c** | |
-| **match.c** | |
+| **built-in.c** | **built_in:** Checks cmd structure and prints their system calls. **my_getline:** Reads and store the input console. **_strtok:** Divides the buffer in tokens when it finds spaces. **flag_0:** Checks if there are errors on the first buffer. **flag_1:** Checks if there is more than 1 buffer. |
+| **function_match_1.c** |  **print_env:** Prints the enviroment. **shell_printenv:** Prints a single line of the enviroment. **shell_setenv:** Creates a value at the enviroment. **shell_unsetenv:** Deletes a value at the enviroment. |
+| **function_match_2.c** | **shell_clear:** Clears the console. **change_directory:** Changes the directory. **change_path:** Changes the PATH. |
+| **functions_help_1** | **_concat:** Concatenates the buffer with 'n' arguments. |
+| **functions_help_2** | **my_getenv:** Searches a key string into the enviroment. **_dstrlen:** Calculates the size of the string of a double pointer. **_free:** Frees the double pointer. **_drealloc:** Reallocates memory depending on flags. |
+| **header.h** | Contains the structures used in our code. Also contains all libraries needed. |
+| **main.c** | **main** Creates a simple shell. **exit_time:** Compares buffer with 'exit' ignoring spaces. **bypass:** Controls the routes of the structure of cmd. **signal_betty:** Prints \nCisfun$ after signal with betty style. |
+| **match.c** | **match:** Matches the input with the stored string. |
 
 ## Compilation
 
