@@ -59,10 +59,10 @@ int my_getline(char **buff, int *len)
 
 	if (flag == '0')
 	{
-		save = malloc(sizeof(char) * 1021);
+		save = malloc(sizeof(char) * 1024);
 		if (save == NULL)
 			return (EOF);
-		*len = read(STDIN_FILENO, save, 1021);
+		*len = read(STDIN_FILENO, save, 1024);
 		var_flag_0 = flag_0(save, len);
 		if (var_flag_0 == EOF || var_flag_0 == 1)
 		{
@@ -71,7 +71,7 @@ int my_getline(char **buff, int *len)
 			return (var_flag_0);
 		}
 		count = var_flag_0;
-		*buff = malloc(sizeof(char) * 1020);
+		*buff = malloc(sizeof(char) * (*len));
 		if (*buff == NULL)
 		{
 			free(save);
