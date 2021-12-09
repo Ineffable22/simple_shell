@@ -25,8 +25,8 @@ that executes commands read from standard input.
 | **functions_help_1** | **_concat:** Concatenates the buffer with 'n' arguments. |
 | **functions_help_2** | **my_getenv:** Searches a key string into the enviroment. **_dstrlen:** Calculates the size of the string of a double pointer. **_free:** Frees the double pointer. **_drealloc:** Reallocates memory depending on flags. |
 | **header.h** | Contains the structures used in our code. Also contains all libraries needed. |
-| **main.c** | **main** Creates a simple shell. **exit_time:** Compares buffer with 'exit' ignoring spaces. **bypass:** Controls the routes of the structure of cmd. **signal_betty:** Prints \nCisfun$ after signal with betty style. |
-| **match.c** | **match:** Matches the input with the stored string. |
+| **main.c** | **main:** Creates a simple shell. **exit_time:** Compares buffer with 'exit' ignoring spaces. **bypass:** Controls the routes of the structure of cmd. **signal_betty:** Prints \nCisfun$ after signal with betty style. |
+| **match.c** | **match:** Matches the input with the stored string. **function_fork:** Divides the process before executes the system call execve(). |
 
 ## Compilation
 
